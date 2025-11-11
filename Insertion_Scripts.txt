@@ -1,0 +1,37 @@
+//Insert 5 Authors in Authors table
+INSERT INTO Authors (FirstName, LastName)
+VALUES
+('William', 'Shakespeare'),
+('George', 'Orwell'),
+('Paulo', 'Coelho'),
+('Harper', 'Lee'),
+('John', 'Green');
+
+//Insert 5 records into Books table
+INSERT INTO Books (Title, AuthorID, PublishDate, Genre)
+VALUES
+('Hamlet', 1, '1623-02-03', 'Drama'),
+('To Kill a Mockingbird', 4, '1960-12-12', 'Action'),
+('1984', 2, '1949-08-11', 'Political Fiction'),
+('The Alchemist', 3, '1988-10-19', 'Drama'),
+('Romeo and Juliet', 1, '1597-05-20', 'Drama');
+
+
+//Insert 5 Members in Members table
+INSERT INTO Members (FirstName, LastName, Email, Phone)
+VALUES
+('Mazen', 'Ahmed', 'mazen.a@gmail.com', '01004567743'),
+('Mayar', 'Farouk', 'm.farouk@gmail.com', '01066869743'),
+('Yasser', 'Medhat', 'yassermedhat@gmail.com', '01114197795'),
+('Zeyad', 'Salah', 'zizo8@gmail.com', '01000252679'),
+('Mohamed', 'Hazem', 'mh95@gmail.com', '01124140080');
+
+//Insert 2 records into Loans table
+INSERT INTO Loans (MemberID, BookID, LoanDate, ReturnDate)
+VALUES
+(3, 5, '2025-09-25', NULL),
+(1, 2, '2025-11-05', '2026-01-05'),
+(3, 4, '2025-06-29','2025-08-29'),
+(2, 4, '2025-10-15', NULL),
+(4, 1, '2024-12-12','2025-01-25'),
+(1, 4, '2025-03-05', '2026-03-27');

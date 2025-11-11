@@ -1,0 +1,23 @@
+//Create new record in books table
+INSERT INTO Books (Title, AuthorID, PublishDate, Genre)
+VALUES
+('Eleven Minutes', 3, '2003-02-03', 'Fiction');
+
+
+//Retrieve all books by a specific author
+SELECT * FROM Books WHERE AuthorID=3;
+
+//Update the return date of a loan
+UPDATE Loans
+SET ReturnDate='2025-11-11'
+WHERE LoanID=7;
+
+
+//Delete a member who no longer exists in the system
+DELETE FROM Members 
+WHERE NOT EXISTS (
+    SELECT 1 FROM Loans 
+    WHERE Loans.MemberID = Members.MemberID
+);
+
+

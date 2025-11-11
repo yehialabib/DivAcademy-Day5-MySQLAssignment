@@ -1,0 +1,18 @@
+//create Library Management database
+CREATE DATABASE Library_Management_System;
+
+//Use the newly created database
+USE Library_Management_System;
+
+
+//Create Authors table
+CREATE TABLE Authors(AuthorID INT AUTO_INCREMENT PRIMARY KEY, FirstName VARCHAR(100), LastName VARCHAR(100));
+
+//Create Books table
+CREATE TABLE Books(BookID INT AUTO_INCREMENT PRIMARY KEY, Title VARCHAR(255) NOT NULL, AuthorID INT, PublishDate DATE, Genre VARCHAR(100), FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID));
+
+//Create Members table
+CREATE TABLE Members(MemberID INT AUTO_INCREMENT PRIMARY KEY, FirstName VARCHAR(100), LastName VARCHAR(100), Email VARCHAR(100), Phone VARCHAR(15));
+
+//Create loans table
+CREATE TABLE Loans(LoanID INT AUTO_INCREMENT PRIMARY KEY, MemberID INT, BooKID INT, LoanDate DATE NOT NULL, ReturnDate DATE, FOREIGN KEY (MemberID) REFERENCES Members(MemberID), FOREIGN KEY (BookID) REFERENCES Books(BookID));
